@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import GermanShepherd from './components/GermanShepherd';
+import AustralianShepherd from './components/AustralianShepherd';
 import FrenchBulldog from './components/FrenchBulldog';
 
 class App extends Component {
@@ -10,8 +11,14 @@ class App extends Component {
     }
   }
 
-  getDogPic = () => {
-  fetch('https://dog.ceo/api/breed/bulldog/images/random')
+
+  testFun = (e) => {
+    console.log(e)
+
+  }
+
+  getDogPic = (e) => {
+  fetch(e)
     .then(response => {
       return response.json()
     })
@@ -24,29 +31,52 @@ class App extends Component {
     })
   }
   componentDidMount(){
-    this.getDogPic()
+    this.getDogPic("https://dog.ceo/api/breed/bulldog/images/random")
   }
 
   getDogOnClick = () => {
-    this.getDogPic()
+    this.getDogPic("https://dog.ceo/api/breed/bulldog/images/random")
   }
 
   render(){
     return (
-      <>
-      <center>
+      <div>
+        <center>
       <h1>Dog Randomizer</h1>
-      
 
-      { this.state.pic &&
+      <div style={{display: "inline-block"}}>
+      <GermanShepherd />
+      <AustralianShepherd />
+      <GermanShepherd />
+      </div>
+      <div style={{display: "inline-block"}}>
+      <GermanShepherd />
+      <AustralianShepherd />
+      <GermanShepherd />
+      </div>
+      <div style={{display: "inline-block"}}>
+      <GermanShepherd />
+      <AustralianShepherd />
+      <GermanShepherd />
+      </div>
+
+      <FrenchBulldog 
+      getDogPic={ this.getDogPic} 
+      componentDidMount={ this.componentDidMount }
+      getDogOnClick={ this.getDogOnClick }
+      testFun={ this.testFun}
+      />
+
+
+      {/* { this.state.pic &&
       <div> 
       <img onClick= { this.getDogOnClick }
       src= { this.state.pic } style= {{ height: '200px' }}
       alt='bulldogs' />
       </div>
-  }
+  } */}
       </center>
-      </>
+      </div>
     )
   }
 }
