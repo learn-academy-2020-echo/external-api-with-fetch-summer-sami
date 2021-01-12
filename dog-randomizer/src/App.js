@@ -1,23 +1,73 @@
 import React, { Component } from 'react'
 import DogPic from './components/DogPic';
 import dogs from './dogArray.js';
+import dogsArray from './dogArray2.js';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      dog: dogs
+      dog: dogs,
+      dogArray : dogsArray
     }
+  }
+
+dogMap = (arr) => {
+
+    let dogArray = arr.map(value => {
+    })
+    return dogArray
+  //   {dog.map((value) => (
+  //     <DogPic 
+  //     dogURL= {value.url}
+  //     dogName= {value.name}
+  //   />
+  // ))}
   }
 
 
   render(){
+    // const {dog} = this.state.dog 
+    // const list = this.state.dogArray.map(value => {
+    //   return [value.name, value.url]
+    // })
+    const list = this.state.dogArray.map(value => {
+      return <DogPic dogURL= {value.url} dogName= {value.name}/>
+    })
+
+    // const urlList = list.map(value => {
+    //   return value[1]
+    // })
+
+    // const nameList = list.map(value => {
+    //   return value[0]
+    // })
+    
     return (
+
       <div>
         <center>
       <h1>Dog Randomizer</h1>
+      {/* <div>{console.log(list)}</div>
+      <div>{console.log(urlList)}</div>
+      <div>{console.log(nameList)}</div> */}
 
       <div style={{display: "inline-block"}}>
+
+      {/* {list.map(value => 
+      <DogPic
+        dogURL= {value.url}
+        dogName= {value.name}
+        />
+      )} */}
+
+      {list}
+
+      </div>
+
+      
+
+      {/* <div style={{display: "inline-block"}}>
       <DogPic 
         dogURL= {this.state.dog.frenchBulldog.url}
         dogName= {this.state.dog.frenchBulldog.name}
@@ -59,7 +109,7 @@ class App extends Component {
         dogURL= {this.state.dog.mutts.url}
         dogName= {this.state.dog.mutts.name}
       />
-      </div>
+      </div> */}
 
       </center>
       </div>
