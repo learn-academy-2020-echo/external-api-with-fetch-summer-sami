@@ -36,16 +36,20 @@ class DogPic extends Component {
     render(){
       return (
         <>
-        <center>
-        <h3>{ this.props.dogName }</h3>
-        { this.state.pic &&
-        <div style= {{ class: "container"}}> 
-        <img onClick= { this.getDogOnClick }
-        src= { this.state.pic } style= {{ height: '200px', width: "200px"}}
-        alt='bulldogs' />
+        <div className="dog-card">
+        <div className= "dog-name-overlay">
+          <h3 className="dog-name">
+            { this.props.dogName }
+          </h3>
         </div>
-    }
-        </center>
+        { this.state.pic &&
+          <div> 
+            <img onClick= { this.getDogOnClick }
+              src= { this.state.pic } className="dog-image"
+              alt='doggos' />
+          </div>
+        }
+        </div>
         </>
       )
     }
