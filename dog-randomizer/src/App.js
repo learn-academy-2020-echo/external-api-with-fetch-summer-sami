@@ -49,7 +49,7 @@ dogMap = (arr) => {
       <div className= "page-container">
         <div className= "header-text">
       <h1>🐾DOG RANDOMIZER🐾</h1>
-      <h2>Click Your Favorites Below!</h2>
+      <h2>Unlimited Doggos to Make You Smile</h2>
       </div>
 
       <div className= "dog-pic-flexbox">
