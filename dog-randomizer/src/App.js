@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DogPic from './components/DogPic';
 import dogs from './dogArray.js';
 import dogsArray from './dogArray2.js';
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -45,14 +46,13 @@ dogMap = (arr) => {
     
     return (
 
-      <div>
-        <center>
-      <h1>Dog Randomizer</h1>
-      {/* <div>{console.log(list)}</div>
-      <div>{console.log(urlList)}</div>
-      <div>{console.log(nameList)}</div> */}
+      <div className= "page-container">
+        <div className= "header-text">
+      <h1>🐾DOG RANDOMIZER🐾</h1>
+      <h2>Unlimited Doggos to Make You Smile</h2>
+      </div>
 
-      <div style={{display: "inline-block"}}>
+      <div className= "dog-pic-flexbox">
 
       {/* {list.map(value => 
       <DogPic
@@ -110,8 +110,6 @@ dogMap = (arr) => {
         dogName= {this.state.dog.mutts.name}
       />
       </div> */}
-
-      </center>
       </div>
     )
   }
